@@ -18,6 +18,19 @@
         };
     };
 
+    behaviors {
+        space_enter: space_enter {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SPACE_ENTER";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+            hold-trigger-key-positions = <54>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -31,11 +44,11 @@
 
             display-name = "Base";
             bindings = <
-&kp ESC    &kp N1  &kp N2  &kp N3    &kp N4    &kp N5                           &kp N6     &kp N7         &kp N8             &kp N9   &kp N0    &kp GRAVE
-&kp TAB    &kp Q   &kp W   &kp F     &kp P     &kp G                            &kp J      &kp L          &kp U              &kp Y    &kp SEMI  &kp MINUS
-&kp LCTRL  &kp A   &kp R   &kp S     &kp T     &kp D                            &kp H      &kp N          &kp E              &kp I    &kp O     &kp SQT
-&kp LSHFT  &kp Z   &kp X   &kp C     &kp V     &kp B      &kp LBKT    &kp RBKT  &kp K      &kp M          &kp COMMA          &kp DOT  &kp FSLH  &kp RSHFT
-                           &kp LALT  &kp LGUI  &kp ENTER  &mo 1       &mo 2     &kp SPACE  &kp BACKSPACE  &kp RIGHT_CONTROL
+&kp ESC    &kp N1  &kp N2  &kp N3    &kp N4    &kp N5                              &kp N6  &kp N7     &kp N8             &kp N9   &kp N0    &kp GRAVE
+&kp TAB    &kp Q   &kp W   &kp F     &kp P     &kp G                               &kp J   &kp L      &kp U              &kp Y    &kp SEMI  &kp MINUS
+&kp LCTRL  &kp A   &kp R   &kp S     &kp T     &kp D                               &kp H   &kp N      &kp E              &kp I    &kp O     &kp SQT
+&kp LSHFT  &kp Z   &kp X   &kp C     &kp V     &kp B   &kp LBKT         &kp RBKT   &kp K   &kp M      &kp COMMA          &kp DOT  &kp FSLH  &kp RSHFT
+                           &kp LALT  &kp LGUI  &mo 1   &kp BACKSPACE    &kp SPACE  &mo 2   &kp ENTER  &kp RIGHT_CONTROL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
