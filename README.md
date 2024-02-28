@@ -2,7 +2,7 @@
 ## This is a config file for my Wireless Lily 58
 Switches are choc sunsets and keycaps are MBK LP Blanks from https://lowprokb.ca/
   - Numbers are are MBK Legend Orthos leftover from a prior build\
-Everything else is from typeractive.xyz
+Everything else is from https://typeractive.xyz/
   - I will be adding nice!nano views once they are in stock
 
 ![keeb img](https://github.com/noahetka/zmk-config-lily/assets/27692471/5fb69065-889a-4bbd-bbb6-aa5f015b3046)
