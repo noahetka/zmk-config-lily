@@ -24,3 +24,5 @@ Important keybinds that may look confusing in the layout image
 Note that all _kp_equal_ have been changed to _equal_./ 
 The former wasn't working for some odd reason, but I didn't feel like changing the graphic for such a change.
 ![ZSA Voyager-esque Layout](https://github.com/noahetka/zmk-config-lily/assets/27692471/0c21506c-e2ad-4487-97a6-12a0c65df47c)
+
+Ask any questions or leave feedback [on my reddit post](https://www.reddit.com/r/ErgoMechKeyboards/comments/1b28ow5/lily_58_wireless_with_choc_sunsets_and_tenting/)
