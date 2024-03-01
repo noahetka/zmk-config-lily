@@ -19,14 +19,14 @@
     };
 
     behaviors {
-        tap_hold: tap_hold {
+        hold_tap: hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "TAP_HOLD";
+            label = "HOLD_TAP";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
+            tapping-term-ms = <175>;
+            flavor = "hold-preferred";
             hold-trigger-key-positions = <54 53 0 12 24 36 11 23 35 49 37 48>;
         };
 
@@ -55,11 +55,11 @@
 
             display-name = "Base";
             bindings = <
-&tap_hold ESCAPE EQUAL     &kp N1  &kp N2  &kp N3        &kp N4        &kp N5                                                                                 &kp N6                   &kp N7         &kp N8             &kp N9   &kp N0    &kp MINUS
-&kp GRAVE                  &kp Q   &kp W   &kp F         &kp P         &kp G                                                                                  &kp J                    &kp L          &kp U              &kp Y    &kp SEMI  &kp BACKSLASH
-&caps_word                 &kp A   &kp R   &kp S         &kp T         &kp D                                                                                  &kp H                    &kp N          &kp E              &kp I    &kp O     &kp SQT
-&kp LSHFT                  &kp Z   &kp X   &kp C         &kp V         &kp B                  &kp LBKT                            &kp RBKT                    &kp K                    &kp M          &kp COMMA          &kp DOT  &kp FSLH  &kp RSHFT
-                                           &kp LEFT_WIN  &kp LEFT_ALT  &hold_tap_layer 1 TAB  &tap_hold LEFT_CONTROL BACKSPACE    &tap_hold LEFT_SHIFT SPACE  &hold_tap_layer 2 ENTER  &kp RIGHT_ALT  &kp RIGHT_CONTROL
+&hold_tap ESCAPE EQUAL  &kp N1  &kp N2  &kp N3        &kp N4        &kp N5                                                                                 &kp N6                   &kp N7         &kp N8             &kp N9   &kp N0    &kp MINUS
+&kp GRAVE               &kp Q   &kp W   &kp F         &kp P         &kp G                                                                                  &kp J                    &kp L          &kp U              &kp Y    &kp SEMI  &kp BACKSLASH
+&caps_word              &kp A   &kp R   &kp S         &kp T         &kp D                                                                                  &kp H                    &kp N          &kp E              &kp I    &kp O     &kp SQT
+&kp LSHFT               &kp Z   &kp X   &kp C         &kp V         &kp B                  &kp LBKT                            &kp RBKT                    &kp K                    &kp M          &kp COMMA          &kp DOT  &kp FSLH  &kp RSHFT
+                                        &kp LEFT_WIN  &kp LEFT_ALT  &hold_tap_layer 1 TAB  &hold_tap LEFT_CONTROL BACKSPACE    &hold_tap LEFT_SHIFT SPACE  &hold_tap_layer 2 ENTER  &kp RIGHT_ALT  &kp RIGHT_CONTROL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -75,11 +75,11 @@
 
             display-name = "Lower";
             bindings = <
-&kp F1        &kp F2      &kp F3  &kp F4    &kp F5      &kp F6                       &none      &none      &none            &none     &none     &trans
-&kp F7        &kp F8      &kp F9  &kp F10   &kp F11     &kp F12                      &none      &none      &none            &none     &none     &trans
-&kp GRAVE     &kp EXCL    &kp AT  &kp HASH  &kp DOLLAR  &kp PRCNT                    &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp TILDE
-&kp CAPSLOCK  &kp DELETE  &trans  &trans    &trans      &trans     &trans    &trans  &trans     &kp PLUS   &kp MINUS        &kp LBRC  &kp RBRC  &kp PIPE
-                                  &trans    &trans      &trans     &trans    &trans  &trans     &trans     &trans
+&kp F1        &kp F2      &kp F3  &kp F4    &kp F5      &kp F6                       &none      &none     &none            &none     &none     &trans
+&kp F7        &kp F8      &kp F9  &kp F10   &kp F11     &kp F12                      &none      &none     &none            &none     &none     &trans
+&kp GRAVE     &kp EXCL    &kp AT  &kp HASH  &kp DOLLAR  &kp PRCNT                    &kp CARET  &kp AMPS  &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp TILDE
+&kp CAPSLOCK  &kp DELETE  &trans  &trans    &trans      &trans     &trans    &trans  &trans     &kp PLUS  &kp MINUS        &kp LBRC  &kp RBRC  &kp PIPE
+                                  &trans    &trans      &trans     &trans    &trans  &trans     &trans    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -95,11 +95,11 @@
 
             display-name = "Raise";
             bindings = <
-&trans      &trans        &trans          &trans          &trans        &trans                          &trans        &trans           &trans         &trans           &trans         &trans
-&trans      &none         &kp K_COPY      &kp UP_ARROW    &kp K_PASTE   &none                           &none         &kp PRINTSCREEN  &kp PAGE_UP    &kp INSERT       &none          &trans
-&trans      &none         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT     &none                           &none         &kp HOME         &kp PAGE_DOWN  &kp END          &none          &trans
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3  &bt BT_SEL 4  &trans    &trans  &kp EQUAL     &kp PLUS         &kp MINUS      &kp KP_MULTIPLY  &kp BACKSLASH  &trans
-                                          &trans          &trans        &trans        &trans    &trans  &trans        &trans           &trans
+&trans      &trans        &trans          &trans          &trans        &trans                          &trans     &trans           &trans         &trans           &trans         &trans
+&trans      &none         &kp K_COPY      &kp UP_ARROW    &kp K_PASTE   &none                           &none      &kp PRINTSCREEN  &kp PAGE_UP    &kp INSERT       &none          &trans
+&trans      &none         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT     &none                           &none      &kp HOME         &kp PAGE_DOWN  &kp END          &none          &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3  &bt BT_SEL 4  &trans    &trans  &kp EQUAL  &kp PLUS         &kp MINUS      &kp KP_MULTIPLY  &kp BACKSLASH  &trans
+                                          &trans          &trans        &trans        &trans    &trans  &trans     &trans           &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
