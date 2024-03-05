@@ -5,7 +5,6 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
 / {
@@ -66,54 +65,34 @@
 
             display-name = "Base";
             bindings = <
-&hold_tap ESCAPE EQUAL  &kp N1  &kp N2  &kp N3        &kp N4        &kp N5                                                                                          &kp N6                   &kp N7         &kp N8             &kp N9   &kp N0    &kp MINUS
-&kp GRAVE               &kp Q   &kp W   &kp F         &kp P         &kp G                                                                                           &kp J                    &kp L          &kp U              &kp Y    &kp SEMI  &kp BACKSLASH
-&caps_word              &kp A   &kp R   &kp S         &kp T         &kp D                                                                                           &kp H                    &kp N          &kp E              &kp I    &kp O     &kp SQT
-&kp LSHFT               &kp Z   &kp X   &kp C         &kp V         &kp B                  &kp LBKT                                     &kp RBKT                    &kp K                    &kp M          &kp COMMA          &kp DOT  &kp FSLH  &kp RSHFT
-                                        &kp LEFT_WIN  &kp LEFT_ALT  &hold_tap_layer 1 TAB  &hold_tap_back LEFT_CONTROL LC(BACKSPACE)    &hold_tap LEFT_SHIFT SPACE  &hold_tap_layer 2 ENTER  &kp RIGHT_ALT  &kp RIGHT_CONTROL
+&kp ESCAPE  &kp N1  &kp N2  &kp N3        &kp N4        &kp N5                                                                                         &kp N6                   &kp N7         &kp N8             &kp N9   &kp N0    &kp MINUS
+&kp GRAVE   &kp Q   &kp W   &kp F         &kp P         &kp G                                                                                          &kp J                    &kp L          &kp U              &kp Y    &kp SEMI  &kp BACKSLASH
+&caps_word  &kp A   &kp R   &kp S         &kp T         &kp D                                                                                          &kp H                    &kp N          &kp E              &kp I    &kp O     &kp SQT
+&kp LSHFT   &kp Z   &kp X   &kp C         &kp V         &kp B                  &kp LBKT                                 &kp RBKT                       &kp K                    &kp M          &kp COMMA          &kp DOT  &kp FSLH  &kp RSHFT
+                            &kp LEFT_WIN  &kp LEFT_ALT  &hold_tap_layer 1 TAB  &hold_tap_back LEFT_CONTROL BACKSPACE    &hold_tap RC(BACKSPACE) SPACE  &hold_tap_layer 2 ENTER  &kp RIGHT_ALT  &kp RIGHT_CONTROL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-        lower_layer {
-            // ------------------------------------------------------------------------------------------------------------
-            // | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |                   |      |       |       |      |       |       |
-            // |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |  F12  |
-            // |   `   |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   ~   |
-            // |       |     |     |      |      |      |        |  |       |      |  _    |  +    |  {   |   }   |  "|"  |
-            //                     |      |      |      |        |  |       |      |       |       |
-
-            display-name = "Lower";
+        lower {
             bindings = <
-&kp F1        &kp F2      &kp F3  &kp F4    &kp F5      &kp F6                       &none      &none     &none            &none     &none     &trans
-&kp F7        &kp F8      &kp F9  &kp F10   &kp F11     &kp F12                      &none      &none     &none            &none     &none     &trans
-&kp GRAVE     &kp EXCL    &kp AT  &kp HASH  &kp DOLLAR  &kp PRCNT                    &kp CARET  &kp AMPS  &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp TILDE
-&kp CAPSLOCK  &kp DELETE  &trans  &trans    &trans      &trans     &trans    &trans  &trans     &kp PLUS  &kp MINUS        &kp LBRC  &kp RBRC  &kp PIPE
-                                  &trans    &trans      &trans     &trans    &trans  &trans     &trans    &trans
+&trans  &trans  &trans    &trans        &trans     &trans                    &trans  &trans    &trans         &trans   &trans   &trans
+&trans  &trans  &trans    &kp UP_ARROW  &trans     &trans                    &trans  &trans    &kp PAGE_UP    &trans   &trans   &trans
+&trans  &kp F1  &kp LEFT  &kp DOWN      &kp RIGHT  &trans                    &trans  &kp HOME  &kp PAGE_DOWN  &kp END  &kp F12  &trans
+&trans  &kp F2  &kp F3    &kp F4        &kp F5     &kp F6  &trans    &trans  &kp F7  &kp F8    &kp F9         &kp F10  &kp F11  &trans
+                          &trans        &trans     &trans  &trans    &trans  &trans  &trans    &trans
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-        raise_layer {
-            // ------------------------------------------------------------------------------------------------------------
-            // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
-            // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |   7   |   8   |  9   |   0   |       |
-            // |   F1  |  F2 |  F3 |  F4  |  F5  |  F6  |                   |      |   <-  |   v   |  ^   |  ->   |       |
-            // |   F7  |  F8 |  F9 |  F10 |  F11 |  F12 |        |  |       |  +   |   -   |   =   |  [   |   ]   |   \   |
-            //                     |      |      |      |        |  |       |      |       |       |
-
-            display-name = "Raise";
+        raise {
             bindings = <
-&trans      &trans        &trans          &trans          &trans        &trans                          &trans     &trans           &trans         &trans           &trans         &trans
-&trans      &none         &kp K_COPY      &kp UP_ARROW    &kp K_PASTE   &none                           &none      &kp PRINTSCREEN  &kp PAGE_UP    &kp INSERT       &none          &trans
-&trans      &none         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT     &none                           &none      &kp HOME         &kp PAGE_DOWN  &kp END          &none          &trans
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3  &bt BT_SEL 4  &trans    &trans  &kp EQUAL  &kp PLUS         &kp MINUS      &kp KP_MULTIPLY  &kp BACKSLASH  &trans
-                                          &trans          &trans        &trans        &trans    &trans  &trans     &trans           &trans
+&trans  &trans           &trans        &trans                &trans                 &trans                         &trans        &trans            &trans             &trans          &trans        &trans
+&trans  &kp NUMBER_1     &kp NUMBER_2  &kp NUMBER_3          &kp NUMBER_4           &kp N5                         &kp NUMBER_6  &kp N7            &kp N8             &kp N9          &kp N0        &trans
+&trans  &kp DOLLAR       &kp PLUS      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp AT_SIGN                    &kp PIPE      &kp MINUS         &kp EQUAL          &kp UNDERSCORE  &kp ASTERISK  &trans
+&trans  &kp EXCLAMATION  &kp HASH      &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp TILDE    &trans    &trans  &kp AMPS      &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PERCENT     &kp CARET     &trans
+                                       &trans                &trans                 &trans       &trans    &trans  &trans        &trans            &trans
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
     };
 };
