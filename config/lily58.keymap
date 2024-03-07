@@ -25,10 +25,9 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            flavor = "hold-preferred";
+            tapping-term-ms = <500>;
+            flavor = "tap-unless-interrupted";
             hold-trigger-key-positions = <54 53 0 12 24 36 11 23 35 49 37 48>;
-            require-prior-idle-ms = <50>;
         };
 
         hold_tap_layer: hold_tap_layer {
@@ -67,11 +66,11 @@
 
             display-name = "Base";
             bindings = <
-&kp ESCAPE  &kp N1  &kp N2  &kp N3        &kp N4        &kp N5                                                                                      &kp N6                   &kp N7         &kp N8             &kp N9   &kp N0    &kp MINUS
-&kp GRAVE   &kp Q   &kp W   &kp F         &kp P         &kp G                                                                                       &kp J                    &kp L          &kp U              &kp Y    &kp SEMI  &kp BACKSLASH
-&caps_word  &kp A   &kp R   &kp S         &kp T         &kp D                                                                                       &kp H                    &kp N          &kp E              &kp I    &kp O     &kp SQT
-&kp LSHFT   &kp Z   &kp X   &kp C         &kp V         &kp B                  &kp LBKT                                 &kp RBKT                    &kp K                    &kp M          &kp COMMA          &kp DOT  &kp FSLH  &kp RSHFT
-                            &kp LEFT_WIN  &kp LEFT_ALT  &hold_tap_layer 1 TAB  &hold_tap_back LEFT_CONTROL BACKSPACE    &hold_tap LEFT_SHIFT SPACE  &hold_tap_layer 2 ENTER  &kp RIGHT_ALT  &kp RIGHT_CONTROL
+&kp ESCAPE  &kp N1  &kp N2  &kp N3        &kp N4        &kp N5                                                                                 &kp N6                   &kp N7         &kp N8             &kp N9   &kp N0    &kp MINUS
+&kp GRAVE   &kp Q   &kp W   &kp F         &kp P         &kp G                                                                                  &kp J                    &kp L          &kp U              &kp Y    &kp SEMI  &kp BACKSLASH
+&caps_word  &kp A   &kp R   &kp S         &kp T         &kp D                                                                                  &kp H                    &kp N          &kp E              &kp I    &kp O     &kp SQT
+&kp LSHFT   &kp Z   &kp X   &kp C         &kp V         &kp B                  &kp LBKT                            &kp RBKT                    &kp K                    &kp M          &kp COMMA          &kp DOT  &kp FSLH  &kp RSHFT
+                            &kp LEFT_WIN  &kp LEFT_ALT  &hold_tap_layer 1 TAB  &hold_tap BACKSPACE LEFT_CONTROL    &hold_tap LEFT_SHIFT SPACE  &hold_tap_layer 2 ENTER  &kp RIGHT_ALT  &kp RIGHT_CONTROL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
