@@ -25,8 +25,8 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "balanced";
+            tapping-term-ms = <100>;
+            flavor = "hold-preferred";
             hold-trigger-key-positions = <54 53 0 12 24 36 11 23 35 49 37 48>;
         };
 
