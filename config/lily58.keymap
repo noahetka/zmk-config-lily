@@ -4,42 +4,10 @@
  * SPDX-License-Identifier: MIT
  */
 
-// ZMK includes
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
-// Urob includes
-#include "../zmk-nodefree-config/helper.h"
-
-/* custom behaviors */
-
-// homerow mods
-ZMK_BEHAVIOR(hrm, hold_tap,
-    flavor = "balanced";
-    tapping-term-ms = <280>;
-    quick-tap-ms = <125>;
-    bindings = <&kp>, <&kp>;
-)
-
-// tap: sticky shift | double tap: capsword
-ZMK_BEHAVIOR(ss_cw, tap_dance,
-    tapping-term-ms = <200>;
-    bindings = <&sk LSHFT>, <&caps_word>;
-)
-
-// tap: backspace | shift + tap: delete | hold: num layer
-ZMK_BEHAVIOR(bs_del_num, mod_morph,
-    bindings = <&lt NUM BSPC>, <&kp DEL>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
-
-// windows sleep macro
-ZMK_BEHAVIOR(win_sleep, macro,
-    wait-ms = <100>;
-    tap-ms = <5>;
-    bindings = <&kp LG(X) &kp U &kp S>;
-)
 
 / {
     combos {
