@@ -5,7 +5,7 @@
  */
 
 // Urob includes
-#include "../zmk-nodefree-config/helper.h"
+#include "../zmk-nodefree-config-main/helper.h"
 
 // ZMK includes
 #include <behaviors.dtsi>
