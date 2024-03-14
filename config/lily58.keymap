@@ -30,9 +30,10 @@
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
-            hold-trigger-key-positions = <50 52 51 53 54 55 56 57>;
+            tapping-term-ms = <170>;
+            flavor = "hold-preferred";
+            quick-tap-ms = <125>;
+            require-prior-idle-ms = <230>;
         };
 
         hold_tap_space: hold_tap_space {
